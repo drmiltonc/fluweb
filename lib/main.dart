@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fluweb/router/router.dart';
+import 'package:fluweb/ui/layouts/auth/auth_layout.dart';
 
 void main() {
+  Flurorouter.configureRoutes();
   runApp(const MainApp());
 }
 
@@ -9,12 +12,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'FluWeb',
+      initialRoute: Flurorouter.rootRoute,
+      onGenerateRoute: Flurorouter.router.generator,
+      builder: (_, child) {
+        return const AuthLayou();
+      },
     );
   }
 }
