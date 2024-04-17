@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/background_twitter.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/custom_title.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/links_bar.dart';

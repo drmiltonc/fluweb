@@ -4,13 +4,13 @@ import 'package:fluweb/ui/buttons/custom_outlined_button.dart';
 import 'package:fluweb/ui/buttons/link_text.dart';
 import 'package:fluweb/ui/inputs/custom_inputs.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 100),
+      margin: const EdgeInsets.only(top: 50),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Center(
         child: Form(
@@ -22,9 +22,18 @@ class LoginView extends StatelessWidget {
                 cursorColor: Colors.white.withOpacity(0.3),
                 style: const TextStyle(color: Colors.white),
                 decoration: CustomInputs.loginInputDecoration(
-                    hint: 'Ingrese su correo',
+                    hint: 'Ingrese su nombre',
+                    label: 'Nombre',
+                    icon: Icons.people),
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                cursorColor: Colors.white.withOpacity(0.3),
+                style: const TextStyle(color: Colors.white),
+                decoration: CustomInputs.loginInputDecoration(
+                    hint: 'Ingrese su correo electrónico',
                     label: 'Email',
-                    icon: Icons.email_sharp),
+                    icon: Icons.mail),
               ),
               const SizedBox(height: 20),
               TextFormField(
@@ -40,12 +49,13 @@ class LoginView extends StatelessWidget {
               CustomOutlinedButton(
                 onPressed: () {},
                 text: 'Ingresar',
+                isFilled: true,
               ),
               const SizedBox(height: 20),
               LinkText(
-                text: 'Crear Nueva Cuenta',
+                text: 'Ingresar',
                 onPressed: () =>
-                    Navigator.pushNamed(context, Flurorouter.registerRoute),
+                    Navigator.pushNamed(context, Flurorouter.loginRoute),
               )
             ],
           ),
