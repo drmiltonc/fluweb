@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluweb/ui/buttons/custom_outlined_button.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -9,35 +10,39 @@ class LoginView extends StatelessWidget {
       margin: const EdgeInsets.only(top: 100),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Center(
-        child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 350,
-            ),
-            child: Form(
-                child: Column(
-              children: [
-                TextFormField(
-                  cursorColor: Colors.white.withOpacity(0.3),
-                  style: const TextStyle(color: Colors.white),
-                  decoration: buildInputDecoration(
-                      hint: 'Ingrese su correo',
-                      label: 'Email',
-                      icon: Icons.email_sharp),
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  obscureText: true,
-                  cursorColor: Colors.white.withOpacity(0.3),
-                  style: const TextStyle(color: Colors.white),
-                  decoration: buildInputDecoration(
-                      hint: 'Ingrese su contraseña',
-                      label: 'Password',
-                      icon: Icons.lock),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(onPressed: () {}, child: const Text('Enviar'))
-              ],
-            ))),
+        child: Form(
+            child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 400),
+          child: Column(
+            children: [
+              TextFormField(
+                cursorColor: Colors.white.withOpacity(0.3),
+                style: const TextStyle(color: Colors.white),
+                decoration: buildInputDecoration(
+                    hint: 'Ingrese su correo',
+                    label: 'Email',
+                    icon: Icons.email_sharp),
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                obscureText: true,
+                cursorColor: Colors.white.withOpacity(0.3),
+                style: const TextStyle(color: Colors.white),
+                decoration: buildInputDecoration(
+                    hint: 'Ingrese su contraseña',
+                    label: 'Password',
+                    icon: Icons.lock),
+              ),
+              const SizedBox(height: 20),
+              CustomOutlinedButton(
+                onPressed: () {},
+                text: 'Ingresar',
+                isFilled: true,
+                
+              )
+            ],
+          ),
+        )),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/background_twitter.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/custom_title.dart';
 import 'package:fluweb/ui/layouts/auth/widgets/links_bar.dart';
@@ -13,9 +14,7 @@ class AuthLayout extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Scrollbar(
-        
-        thumbVisibility: true,
+      body: Scrollbar( 
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
@@ -72,21 +71,18 @@ class _DesktopBody extends StatelessWidget {
     return Container(
       width: size.width,
       height: size.height * 0.9,
+      color: Colors.black87,
       child: Row(
         children: [
-          const BackgroundTwitter(),
-          Container(
-            width: 600,
-            height: double.infinity,
-            color: Colors.black87,
-            child: Column(
-              children: [
-                const SizedBox(height: 50),
-                const CustomTitle(),
-                const SizedBox(height: 50),
-                Expanded(child: child)
-              ],
-            ),
+          const Expanded(child: BackgroundTwitter()),
+          Column(
+            children: [
+              const SizedBox(height: 50),
+              const CustomTitle(),
+              const SizedBox(height: 50),
+              SizedBox(child: child),
+              
+            ],
           )
         ],
       ),
