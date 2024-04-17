@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomTitle extends StatelessWidget {
   const CustomTitle({super.key});
@@ -16,17 +15,11 @@ class CustomTitle extends StatelessWidget {
             width: 50,
             height: 50,
           ),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: Text(
-              'Happening now',
-              style: GoogleFonts.montserratAlternates(
-                fontSize: 60,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          )
+          const Text(
+            softWrap: true,
+            'Happening now',
+            style: TextStyle( color: Colors.white, fontSize: 80)
+          ),
         ],
       ),
     );
